@@ -1,4 +1,6 @@
 # cgtc-membership
 CGTC membership app
 
-## PayPal integration tesing
+## PayPal integration testing
+
+This is a simple update.
