@@ -325,27 +325,27 @@ if (!defined('__PREPEND_INCLUDED__')) {
 	if ($acxChange) MemberContact::ChangeUserAccess($acxChange);
 
 	// - CGTC application constants
-	define('__strCGTC_MembershipList___','Club Members'); // March 12, 2017 - wpg
-	define('__strCGTC_MembershipLogs___','Membership Logs'); // March 12, 2017 - wpg
-	define('__strCGTC_Reports___','Reports'); // March 12, 2017 - wpg
-	define('__strCGTC_Home___','Main page'); // March 18, 2017 - wpg
-	define('__strCGTC_Membership___','My Membership'); // March 18, 2017 - wpg
-	define('__strCGTC_MemberContact___','Member Contact'); // March 19, 2017 - wpg
-	define('__strCGTC_TAGS___','Member Participation'); // March 21, 2017 - wpg
-	define('__strCGTC_RACE_RESULTS___','Race Results'); // March 28, 2017 - wpg
-	define('__strCGTC_CurrentMemberEmails___','Current Member Emails'); // April 14, 2017 - wpg
-	define('__strCGTC_NotificationLogs___','Notification Logs'); // April 23, 2017 - wpg
-	define('__strCGTC_MemberLogin___','CGTC - Member Login Link'); // April 23, 2017 - wpg
-	define('__strCGTC_MembershipCorner___','Membership Corner'); // April 25, 2017 - wpg
-	define('__strCGTC_PartnerBusinesses___','Partner Businesses'); // April 28, 2017 - wpg
-	define('__strCGTC_Races___','Races'); // May 21, 2017 - wpg
-	define('__strCGTC_RaceResults___','Race Results'); // May 21, 2017 - wpg
-	define('__strCGTC_ApplicationAccess___','Application Access'); // May 23, 2017 - wpg
-	define('__strCGTC_CurrentClubDiscounts___','Current Club Discounts'); // July 16, 2017 - wpg
-	define('__strCGTC_MemberAccessLogs___','Application Access Logs'); // July 16, 2017 - wpg
-	define('__strCGTC_ActiveMemberExport___','Member Export'); // Dec. 4, 2018 - wpg (used for updating race timing databases)
-	define('__strCGTC_MemberMileageLogs___','Member Mileage'); // Nov. 22, 2019 - wpg 
-	define('__strCGTC_CurrentMemberAges___','Member Ages'); // Jan. 31, 2026 - wpg
+	define('__strClub_MembershipList___','Club Members'); // March 12, 2017 - wpg
+	define('__strClub_MembershipLogs___','Membership Logs'); // March 12, 2017 - wpg
+	define('__strClub_Reports___','Reports'); // March 12, 2017 - wpg
+	define('__strClub_Home___','Main page'); // March 18, 2017 - wpg
+	define('__strClub_Membership___','My Membership'); // March 18, 2017 - wpg
+	define('__strClub_MemberContact___','Member Contact'); // March 19, 2017 - wpg
+	define('__strClub_TAGS___','Member Participation'); // March 21, 2017 - wpg
+	define('__strClub_RACE_RESULTS___','Race Results'); // March 28, 2017 - wpg
+	define('__strClub_CurrentMemberEmails___','Current Member Emails'); // April 14, 2017 - wpg
+	define('__strClub_NotificationLogs___','Notification Logs'); // April 23, 2017 - wpg
+	define('__strClub_MemberLogin___','CGTC - Member Login Link'); // April 23, 2017 - wpg
+	define('__strClub_MembershipCorner___','Membership Corner'); // April 25, 2017 - wpg
+	define('__strClub_PartnerBusinesses___','Partner Businesses'); // April 28, 2017 - wpg
+	define('__strClub_Races___','Races'); // May 21, 2017 - wpg
+	define('__strClub_RaceResults___','Race Results'); // May 21, 2017 - wpg
+	define('__strClub_ApplicationAccess___','Application Access'); // May 23, 2017 - wpg
+	define('__strClub_CurrentClubDiscounts___','Current Club Discounts'); // July 16, 2017 - wpg
+	define('__strClub_MemberAccessLogs___','Application Access Logs'); // July 16, 2017 - wpg
+	define('__strClub_ActiveMemberExport___','Member Export'); // Dec. 4, 2018 - wpg (used for updating race timing databases)
+	define('__strClub_MemberMileageLogs___','Member Mileage'); // Nov. 22, 2019 - wpg 
+	define('__strClub_CurrentMemberAges___','Member Ages'); // Jan. 31, 2026 - wpg
 	// had to do away with Emoji because it was causing errors
 	define('__txtC_RunningPerson__','My progress');
 	define('__txtC_FinishFlag__','Goal');

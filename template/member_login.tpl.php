@@ -6,7 +6,7 @@
 	// kick user away from script if they are not going through the proper channels
 	if (!defined('__PREPEND_INCLUDED__')) exit;
 
-	$strPageTitle = __strCGTC_MemberLogin___;
+	$strPageTitle = __strClub_MemberLogin___;
 	require(__INCLUDES__ . '/header.inc.php');
 ?>
 

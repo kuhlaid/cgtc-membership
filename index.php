@@ -26,10 +26,7 @@
 // Include prepend.inc to load Qcodo
 require('includes/prepend.inc.php');
 
-print "Env var: ".$_ENV['TEST_ENV_VAR'];
-exit;
-
-define('__SEL_MENU__',__strCGTC_Home___);
+define('__SEL_MENU__',__strClub_Home___);
 $joinUrl=$_ENV['JOIN_URL'];
 require(__INCLUDES__ . '/header.inc.php');
 

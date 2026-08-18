@@ -8,7 +8,7 @@
  */
 // Include prepend.inc to load Qcodo
 require('includes/prepend.inc.php');
-define('__SEL_MENU__',__strCGTC_Home___);
+define('__SEL_MENU__',__strClub_Home___);
 $joinUrl=$_ENV['JOIN_URL'];
 require(__INCLUDES__ . '/header.inc.php');
 // read-only login under readonly_login.php?id=7oP1587heEAJn36762lKw1R294A4n3GBcu58Ao2845MFY4q

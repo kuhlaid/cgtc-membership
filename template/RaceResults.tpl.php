@@ -7,7 +7,7 @@
 	// kick user away from script if they are not going through the proper channels
 	if (!defined('__PREPEND_INCLUDED__')) exit;
 
-	$strPageTitle = __strCGTC_RaceResults___;
+	$strPageTitle = __strClub_RaceResults___;
 	define('__SEL_MENU__',$strPageTitle);
 	require(__INCLUDES__ . '/header.inc.php');
 	$addLink='';

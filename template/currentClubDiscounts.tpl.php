@@ -7,7 +7,7 @@
 	// kick user away from script if they are not going through the proper channels
 	if (!defined('__PREPEND_INCLUDED__')) exit;
 	$strOption = QApplication::QueryString('option');
-	$strPageTitle = __strCGTC_CurrentClubDiscounts___;
+	$strPageTitle = __strClub_CurrentClubDiscounts___;
 	define('__SEL_MENU__',$strPageTitle);
 	if ($strOption!='showMenu')
 		define('__HIDE_MENU__',1);
