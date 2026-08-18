@@ -84,7 +84,7 @@ if ((function_exists('date_default_timezone_set')) && (!ini_get('date.timezone')
 
 define('ERROR_PAGE_PATH', __DOCROOT__.__PHP_ASSETS_PATH__ . '/_core/error_page.php');
 
-define('__APP_URL__',__APP_DOMAIN__.__SUBDIRECTORY__)
+define('__APP_URL__',__APP_DOMAIN__.__SUBDIRECTORY__);
 define ('__CLUB_LOGO_300px__', "<img src='".__APP_DOMAIN__.__IMAGE_ASSETS__."/CgtcLogo300px.png' alt='CGTC Logo' title='CGTC Logo' class='m-2'/>");
 // wpg force the visitor onto SSL at all times
 if (empty($_SERVER['HTTPS'])) {
