@@ -372,7 +372,7 @@ class EmailReport extends QForm {
 
 	protected function membershipUpdate($strMemberContactInfo='', $strMembershipLog='', $strOtherFamilyMembers='', $strMemberEmail='', $intMemberId='', $strName=''){
 		$strAppName = $_ENV['APPLICATION_TITLE'];
-		$strEmailList = $_ENV['EMAIL_LIST']
+		$strEmailList = $_ENV['EMAIL_LIST'];
 		$subject = QDateTime::NowToString(QDateTime::FormatDisplayDate)." - ".$_ENV['MEMBERSHIP_UPDATE_TXT'].$strName;
 		$strAppUrl=__APP_URL__;
 		$strPBList = PartnerBusiness::currentPbWebList();
