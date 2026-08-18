@@ -426,7 +426,7 @@
 
 
 
-			$this->colAcl->HtmlEntities = $this->colTags__SUBDIRECTORY__ies  = $this->colNote->HtmlEntities = $this->colAddr1->HtmlEntities = $this->colEditLinkColumn->HtmlEntities = false;
+			$this->colAcl->HtmlEntities = $this->colTags  = $this->colNote->HtmlEntities = $this->colAddr1->HtmlEntities = $this->colEditLinkColumn->HtmlEntities = false;
 
 			$this->colTags->HorizontalAlign  = QHorizontalAlign::Center;
 
