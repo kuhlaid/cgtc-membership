@@ -317,8 +317,8 @@ class EmailReport extends QForm {
 			$strLink = "<a href='".$linkAddress."'>".$linkAddress."</a>";
 
 			// decode the login link
-
-			$linkKeyArray = unserialize(openssl_decrypt(base64_decode($loginKey ?? ''), 'aes-256-cbc', __EMAIL_KEY__, OPENSSL_RAW_DATA,__EMAIL_IV__) ?? '');
+			$binaryIv = hex2bin(__EMAIL_IV__); 
+			$linkKeyArray = unserialize(openssl_decrypt(base64_decode($loginKey ?? ''), 'aes-256-cbc', __EMAIL_KEY__, OPENSSL_RAW_DATA,$binaryIv) ?? '');
 
 			$memberId='x';
 

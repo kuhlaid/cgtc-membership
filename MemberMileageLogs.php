@@ -181,6 +181,7 @@
 		protected function dtgMemberMileage_Bind() {
 			$this->intPlace=1;
 			$objClauses = array();
+			$strAndCondition = '';
 			// if we are only concerned with the current logged in member then query their logs
 			// else we query everyone's logs
 			// 
