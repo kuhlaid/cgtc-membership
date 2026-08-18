@@ -23,7 +23,7 @@
  * - separating member and non-member sections for login (club signup)
  */
 
-print "Env var: ".getenv('TEST_ENV_VAR');
+print "Env var: ".$_ENV['TEST_ENV_VAR'];
 exit;
 
 // Include prepend.inc to load Qcodo
