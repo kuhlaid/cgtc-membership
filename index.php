@@ -22,6 +22,7 @@
  * June 13, 2017 - wpg
  * - separating member and non-member sections for login (club signup)
  */
+require __DIR__ . '/vendor/autoload.php';
 
 print "Env var: ".$_ENV['TEST_ENV_VAR'];
 exit;
