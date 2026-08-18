@@ -326,35 +326,35 @@
 		
 		// Protected Update Methods
 		protected function UpdateMemberContactFields() {
-			$this->objMemberContact?->LastName = $this->txtLastName->Text;
-			$this->objMemberContact?->FirstName = $this->txtFirstName->Text;
-			$this->objMemberContact?->Email = $this->txtEmail->Text;
-			$this->objMemberContact?->Addr1 = $this->txtAddr1->Text;
-			$this->objMemberContact?->Addr2 = $this->txtAddr2->Text;
-			$this->objMemberContact?->City = $this->txtCity->Text;
-			$this->objMemberContact?->State = $this->txtState->Text;
-			$this->objMemberContact?->Zip = $this->txtZip->Text;
-			$this->objMemberContact?->Gender = $this->txtGender->Text;
-			$this->objMemberContact?->BirthDay = $this->txtBirthDay->Text;
-			$this->objMemberContact?->BirthMonth = $this->txtBirthMonth->Text;
-			$this->objMemberContact?->BirthYear = $this->txtBirthYear->Text;
-			$this->objMemberContact?->MainPhone = $this->txtMainPhone->Text;
-			$this->objMemberContact?->AltPhone = $this->txtAltPhone->Text;
-			$this->objMemberContact?->Note = $this->txtNote->Text;
-			$this->objMemberContact?->TransferId = $this->txtTransferId->Text;
-			$this->objMemberContact?->ContactAdded = $this->calContactAdded->DateTime;
-			$this->objMemberContact?->GoogleEmail = $this->txtGoogleEmail->Text;
-			$this->objMemberContact?->FacebookEmail = $this->txtFacebookEmail->Text;
-			$this->objMemberContact?->JoinedClub = $this->calJoinedClub->DateTime;
-			$this->objMemberContact?->NotActive = $this->chkNotActive->Checked;
-			$this->objMemberContact?->ImageReference = $this->txtImageReference->Text;
+			$this->objMemberContact->LastName = $this->txtLastName->Text;
+			$this->objMemberContact->FirstName = $this->txtFirstName->Text;
+			$this->objMemberContact->Email = $this->txtEmail->Text;
+			$this->objMemberContact->Addr1 = $this->txtAddr1->Text;
+			$this->objMemberContact->Addr2 = $this->txtAddr2->Text;
+			$this->objMemberContact->City = $this->txtCity->Text;
+			$this->objMemberContact->State = $this->txtState->Text;
+			$this->objMemberContact->Zip = $this->txtZip->Text;
+			$this->objMemberContact->Gender = $this->txtGender->Text;
+			$this->objMemberContact->BirthDay = $this->txtBirthDay->Text;
+			$this->objMemberContact->BirthMonth = $this->txtBirthMonth->Text;
+			$this->objMemberContact->BirthYear = $this->txtBirthYear->Text;
+			$this->objMemberContact->MainPhone = $this->txtMainPhone->Text;
+			$this->objMemberContact->AltPhone = $this->txtAltPhone->Text;
+			$this->objMemberContact->Note = $this->txtNote->Text;
+			$this->objMemberContact->TransferId = $this->txtTransferId->Text;
+			$this->objMemberContact->ContactAdded = $this->calContactAdded->DateTime;
+			$this->objMemberContact->GoogleEmail = $this->txtGoogleEmail->Text;
+			$this->objMemberContact->FacebookEmail = $this->txtFacebookEmail->Text;
+			$this->objMemberContact->JoinedClub = $this->calJoinedClub->DateTime;
+			$this->objMemberContact->NotActive = $this->chkNotActive->Checked;
+			$this->objMemberContact->ImageReference = $this->txtImageReference->Text;
 		}
 
 
 		// Control ServerActions
 		protected function btnSave_Click($strFormId, $strControlId, $strParameter) {
 			$this->UpdateMemberContactFields();
-			$this->objMemberContact?->Save();
+			$this->objMemberContact->Save();
 
 
 			$this->RedirectToListPage();
@@ -366,7 +366,7 @@
 
 		protected function btnDelete_Click($strFormId, $strControlId, $strParameter) {
 
-			$this->objMemberContact?->Delete();
+			$this->objMemberContact->Delete();
 
 			$this->RedirectToListPage();
 		}
