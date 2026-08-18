@@ -375,86 +375,11 @@ class EmailReport extends QForm {
 		$strEmailList = $_ENV['EMAIL_LIST']
 		$subject = QDateTime::NowToString(QDateTime::FormatDisplayDate)." - ".$_ENV['MEMBERSHIP_UPDATE_TXT'].$strName;
 		$strAppUrl=__APP_URL__;
-		$body = membershipUpdateNotice($subject, $strAppUrl, $strAppName, $strMemberContactInfo, $strMembershipLog, $strOtherFamilyMembers, $strEmailList);
+		$strPBList = PartnerBusiness::currentPbWebList();
+		$strClubLogo = __CLUB_LOGO_300px__;
+		$strEmailFrom = __EMAIL_FROM__;
+		$body = membershipUpdateNotice($subject, $strAppUrl, $strAppName, $strMemberContactInfo, $strMembershipLog, $strOtherFamilyMembers, $strEmailList, $strPBList, $strClubLogo, $strEmailFrom);
 		
-// $objPartnerBusinessArray = PartnerBusiness::QueryArray(
-
-// 	QQ::Equal(QQN::PartnerBusiness()->Active, true),
-
-// 	QQ::Clause(QQ::OrderBy(QQN::PartnerBusiness()->Name))
-
-// );
-
-// $bgColor="background-color:#f7f7f7;border-top:dashed 1px #ccc;border-bottom:dashed 1px #ccc;";
-
-// $altRow = true;
-
-// if ($objPartnerBusinessArray) foreach($objPartnerBusinessArray as $objPartnerBusiness) {
-
-// $body .= "<div style='".(($altRow) ? $bgColor : '')."padding:15px;'>
-
-// <span style='font-size:18px;font-weight:bold;color:red;'>".$objPartnerBusiness->Name."</span>
-
-// <span style='font-size:14px;'>Discount:</span>
-
-// <b>".trim($objPartnerBusiness->Discount ?? '')."</b>
-
-
-
-// <span style='font-size:14px;'>Phone:</span>
-
-// ".trim($objPartnerBusiness->Phone ?? '')."
-
-
-
-// <span style='font-size:14px;'>Locations:</span>
-
-// ".trim($objPartnerBusiness->Address ?? '')."
-
-
-
-// <span style='font-size:14px;'>Hours:</span>
-
-// <b>".trim($objPartnerBusiness->Hours ?? '')."</b>
-
-
-
-// <span style='font-size:14px;'>Online:</span>
-
-// ".trim($objPartnerBusiness->Website ?? '')."
-
-// <i>Confirmed discount and store info: ".$objPartnerBusiness->VerifiedDiscountDate->toString(QDateTime::FormatDisplayDate)."</i></div>
-
-// ";
-
-// $altRow = !$altRow;
-
-// }
-
-$body .= PartnerBusiness::currentPbWebList();
-
-
-
-$body .= "
-
-".__CLUB_LOGO_300px__."
-
-		------
-
-		Sincerely,
-
-		Heiko Rath
-
-		CGTC Secretary of Membership
-
-		Email: ".__EMAIL_FROM__."
-
-		Website: <a href='".APP_HTTP_ROOT."'>".APP_HTTP_ROOT."</a>
-
-		Join our club discussions on Facebook at: <a href='".$_ENV['FACEBOOK_GROUP']."'>".$_ENV['FACEBOOK_GROUP']."</a>
-
-		<i>(message sent on ".QDateTime::NowToString('MMM DD, YYYY at hhhh:mm:ss').")</i>";
-
 		$this->strReport->Text = nl2br($body);
 
 		$to=$strMemberEmail;	
