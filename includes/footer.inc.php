@@ -70,7 +70,7 @@ if ($intMemberTagId != '') {
 <?php } ?>
 	<!-- footer -->
 	<div class="d-flex text-white fixed-bottom small" style="background: #b00101;" id="appFooter">
-		<div class="p-2"><span data-toggle="tooltip" title="<?=$_ENV['APP_ACCESS_TEXT'];?>" ><a href="<?=__APP_DOMAIN__;?>" target="_blank" class="text-white"><?=$_ENV['VERSION_FULL_TEXT']</a></span></div>
+		<div class="p-2"><span data-toggle="tooltip" title="<?=$_ENV['APP_ACCESS_TEXT'];?>" ><a href="<?=__APP_DOMAIN__;?>" target="_blank" class="text-white"><?=$_ENV['VERSION_FULL_TEXT'];?></a></span></div>
 	</div>
 	<script type="text/javascript">
   WebFontConfig = {
