@@ -315,15 +315,7 @@ class EmailReport extends QForm {
 			$linkAddress = __APP_DOMAIN__.__SUBDIRECTORY__."/MemberLogin.php?loginKey=".urlencode($loginKey);
 
 			$strLink = "<a href='".$linkAddress."'>".$linkAddress."</a>";
-
-			// decode the login link
-			// $binaryIv = hex2bin(__EMAIL_IV__); 
 			$cipher = $_ENV['CIPHER_TYPE'];
-			// // 4. Calculate the required IV length dynamically for your cipher
-			// $iv_length = openssl_cipher_iv_length($cipher);
-
-			// // 5. Extract the IV from the beginning of the packet
-			// $iv = substr($raw_packet, 0, $iv_length);
 
 			$linkKeyArray = unserialize(openssl_decrypt(base64_decode($loginKey ?? ''), $cipher, __EMAIL_KEY__, OPENSSL_RAW_DATA, __EMAIL_IV__) ?? '');
 
@@ -467,51 +459,17 @@ class EmailReport extends QForm {
 	protected function buildEmail($subject='',$to='',$body='',$notificationType='',$memberId='',$from=__EMAIL_FROM__,$saveTask=1) {
 
 		try{
-
-			// Create a new message
-
-			// $objMessage = new QEmailMessage();
-
-			// $objMessage->From = $from;
-
-			// $objMessage->To = $to;
-
-			// $objMessage->Subject = $subject;
-
-			// $objMessage->HtmlBody = nl2br($body);//"<font face='arial narrow,arial,verdana'>".."</font>";
-
-			// QEmailServer::Send($objMessage);
-
-
-
-			# replacing QEmailServer since this does not seem to work in v8.4 for some reason
-
 			mail($to,
-
 				$subject,
-
 				nl2br($body),
-
 				"From: ".$from. "\r\n" . "Content-Type: text/html; charset=utf-8",
-
 				"-f".$from);
-
-
-
 		} catch (Exception $e) {
-
 			// Code to handle the exception
-
 			error_log("Caught exception on sending email: " . $e->getMessage() . "\n");
-
-			// You can also log the error, display a custom message, etc.
-
 		}
 
 		if (!$saveTask) return;	// stop here
-
-
-
 		// if not a new member
 
 		// else a new member
