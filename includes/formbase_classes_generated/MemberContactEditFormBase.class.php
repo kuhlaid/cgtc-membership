@@ -116,7 +116,7 @@
 			$this->lblId = new QLabel($this);
 			$this->lblId->Name = QApplication::Translate('Id');
 			if ($this->blnEditMode)
-				$this->lblId->Text = $this->objMemberContact->Id;
+				$this->lblId->Text = $this->objMemberContact?->Id;
 			else
 				$this->lblId->Text = 'N/A';
 		}
@@ -125,7 +125,7 @@
 		protected function txtLastName_Create() {
 			$this->txtLastName = new QTextBox($this);
 			$this->txtLastName->Name = QApplication::Translate('Last Name');
-			$this->txtLastName->Text = $this->objMemberContact->LastName;
+			$this->txtLastName->Text = $this->objMemberContact?->LastName;
 			$this->txtLastName->Required = true;
 			$this->txtLastName->MaxLength = MemberContact::LastNameMaxLength;
 		}
@@ -134,7 +134,7 @@
 		protected function txtFirstName_Create() {
 			$this->txtFirstName = new QTextBox($this);
 			$this->txtFirstName->Name = QApplication::Translate('First Name');
-			$this->txtFirstName->Text = $this->objMemberContact->FirstName;
+			$this->txtFirstName->Text = $this->objMemberContact?->FirstName;
 			$this->txtFirstName->Required = true;
 			$this->txtFirstName->MaxLength = MemberContact::FirstNameMaxLength;
 		}
@@ -143,7 +143,7 @@
 		protected function txtEmail_Create() {
 			$this->txtEmail = new QTextBox($this);
 			$this->txtEmail->Name = QApplication::Translate('Email');
-			$this->txtEmail->Text = $this->objMemberContact->Email;
+			$this->txtEmail->Text = $this->objMemberContact?->Email;
 			$this->txtEmail->MaxLength = MemberContact::EmailMaxLength;
 		}
 
@@ -151,7 +151,7 @@
 		protected function txtAddr1_Create() {
 			$this->txtAddr1 = new QTextBox($this);
 			$this->txtAddr1->Name = QApplication::Translate('Addr 1');
-			$this->txtAddr1->Text = $this->objMemberContact->Addr1;
+			$this->txtAddr1->Text = $this->objMemberContact?->Addr1;
 			$this->txtAddr1->MaxLength = MemberContact::Addr1MaxLength;
 		}
 
@@ -159,7 +159,7 @@
 		protected function txtAddr2_Create() {
 			$this->txtAddr2 = new QTextBox($this);
 			$this->txtAddr2->Name = QApplication::Translate('Addr 2');
-			$this->txtAddr2->Text = $this->objMemberContact->Addr2;
+			$this->txtAddr2->Text = $this->objMemberContact?->Addr2;
 			$this->txtAddr2->MaxLength = MemberContact::Addr2MaxLength;
 		}
 
@@ -167,7 +167,7 @@
 		protected function txtCity_Create() {
 			$this->txtCity = new QTextBox($this);
 			$this->txtCity->Name = QApplication::Translate('City');
-			$this->txtCity->Text = $this->objMemberContact->City;
+			$this->txtCity->Text = $this->objMemberContact?->City;
 			$this->txtCity->MaxLength = MemberContact::CityMaxLength;
 		}
 
@@ -175,7 +175,7 @@
 		protected function txtState_Create() {
 			$this->txtState = new QTextBox($this);
 			$this->txtState->Name = QApplication::Translate('State');
-			$this->txtState->Text = $this->objMemberContact->State;
+			$this->txtState->Text = $this->objMemberContact?->State;
 			$this->txtState->MaxLength = MemberContact::StateMaxLength;
 		}
 
@@ -183,7 +183,7 @@
 		protected function txtZip_Create() {
 			$this->txtZip = new QTextBox($this);
 			$this->txtZip->Name = QApplication::Translate('Zip');
-			$this->txtZip->Text = $this->objMemberContact->Zip;
+			$this->txtZip->Text = $this->objMemberContact?->Zip;
 			$this->txtZip->MaxLength = MemberContact::ZipMaxLength;
 		}
 
@@ -191,7 +191,7 @@
 		protected function txtGender_Create() {
 			$this->txtGender = new QTextBox($this);
 			$this->txtGender->Name = QApplication::Translate('Gender');
-			$this->txtGender->Text = $this->objMemberContact->Gender;
+			$this->txtGender->Text = $this->objMemberContact?->Gender;
 			$this->txtGender->MaxLength = MemberContact::GenderMaxLength;
 		}
 
@@ -199,28 +199,28 @@
 		protected function txtBirthDay_Create() {
 			$this->txtBirthDay = new QIntegerTextBox($this);
 			$this->txtBirthDay->Name = QApplication::Translate('Birth Day');
-			$this->txtBirthDay->Text = $this->objMemberContact->BirthDay;
+			$this->txtBirthDay->Text = $this->objMemberContact?->BirthDay;
 		}
 
 		// Create and Setup txtBirthMonth
 		protected function txtBirthMonth_Create() {
 			$this->txtBirthMonth = new QIntegerTextBox($this);
 			$this->txtBirthMonth->Name = QApplication::Translate('Birth Month');
-			$this->txtBirthMonth->Text = $this->objMemberContact->BirthMonth;
+			$this->txtBirthMonth->Text = $this->objMemberContact?->BirthMonth;
 		}
 
 		// Create and Setup txtBirthYear
 		protected function txtBirthYear_Create() {
 			$this->txtBirthYear = new QIntegerTextBox($this);
 			$this->txtBirthYear->Name = QApplication::Translate('Birth Year');
-			$this->txtBirthYear->Text = $this->objMemberContact->BirthYear;
+			$this->txtBirthYear->Text = $this->objMemberContact?->BirthYear;
 		}
 
 		// Create and Setup txtMainPhone
 		protected function txtMainPhone_Create() {
 			$this->txtMainPhone = new QTextBox($this);
 			$this->txtMainPhone->Name = QApplication::Translate('Main Phone');
-			$this->txtMainPhone->Text = $this->objMemberContact->MainPhone;
+			$this->txtMainPhone->Text = $this->objMemberContact?->MainPhone;
 			$this->txtMainPhone->MaxLength = MemberContact::MainPhoneMaxLength;
 		}
 
@@ -228,7 +228,7 @@
 		protected function txtAltPhone_Create() {
 			$this->txtAltPhone = new QTextBox($this);
 			$this->txtAltPhone->Name = QApplication::Translate('Alt Phone');
-			$this->txtAltPhone->Text = $this->objMemberContact->AltPhone;
+			$this->txtAltPhone->Text = $this->objMemberContact?->AltPhone;
 			$this->txtAltPhone->MaxLength = MemberContact::AltPhoneMaxLength;
 		}
 
@@ -236,7 +236,7 @@
 		protected function txtNote_Create() {
 			$this->txtNote = new QTextBox($this);
 			$this->txtNote->Name = QApplication::Translate('Note');
-			$this->txtNote->Text = $this->objMemberContact->Note;
+			$this->txtNote->Text = $this->objMemberContact?->Note;
 			$this->txtNote->MaxLength = MemberContact::NoteMaxLength;
 		}
 
@@ -244,14 +244,14 @@
 		protected function txtTransferId_Create() {
 			$this->txtTransferId = new QIntegerTextBox($this);
 			$this->txtTransferId->Name = QApplication::Translate('Transfer Id');
-			$this->txtTransferId->Text = $this->objMemberContact->TransferId;
+			$this->txtTransferId->Text = $this->objMemberContact?->TransferId;
 		}
 
 		// Create and Setup calContactAdded
 		protected function calContactAdded_Create() {
 			$this->calContactAdded = new QDateTimePicker($this);
 			$this->calContactAdded->Name = QApplication::Translate('Contact Added');
-			$this->calContactAdded->DateTime = $this->objMemberContact->ContactAdded;
+			$this->calContactAdded->DateTime = $this->objMemberContact?->ContactAdded;
 			$this->calContactAdded->DateTimePickerType = QDateTimePickerType::Date;
 		}
 
@@ -259,7 +259,7 @@
 		protected function txtGoogleEmail_Create() {
 			$this->txtGoogleEmail = new QTextBox($this);
 			$this->txtGoogleEmail->Name = QApplication::Translate('Google Email');
-			$this->txtGoogleEmail->Text = $this->objMemberContact->GoogleEmail;
+			$this->txtGoogleEmail->Text = $this->objMemberContact?->GoogleEmail;
 			$this->txtGoogleEmail->MaxLength = MemberContact::GoogleEmailMaxLength;
 		}
 
@@ -267,7 +267,7 @@
 		protected function txtFacebookEmail_Create() {
 			$this->txtFacebookEmail = new QTextBox($this);
 			$this->txtFacebookEmail->Name = QApplication::Translate('Facebook Email');
-			$this->txtFacebookEmail->Text = $this->objMemberContact->FacebookEmail;
+			$this->txtFacebookEmail->Text = $this->objMemberContact?->FacebookEmail;
 			$this->txtFacebookEmail->MaxLength = MemberContact::FacebookEmailMaxLength;
 		}
 
@@ -275,7 +275,7 @@
 		protected function calJoinedClub_Create() {
 			$this->calJoinedClub = new QDateTimePicker($this);
 			$this->calJoinedClub->Name = QApplication::Translate('Joined Club');
-			$this->calJoinedClub->DateTime = $this->objMemberContact->JoinedClub;
+			$this->calJoinedClub->DateTime = $this->objMemberContact?->JoinedClub;
 			$this->calJoinedClub->DateTimePickerType = QDateTimePickerType::Date;
 		}
 
@@ -283,14 +283,14 @@
 		protected function chkNotActive_Create() {
 			$this->chkNotActive = new QCheckBox($this);
 			$this->chkNotActive->Name = QApplication::Translate('Not Active');
-			$this->chkNotActive->Checked = $this->objMemberContact->NotActive;
+			$this->chkNotActive->Checked = $this->objMemberContact?->NotActive;
 		}
 
 		// Create and Setup txtImageReference
 		protected function txtImageReference_Create() {
 			$this->txtImageReference = new QTextBox($this);
 			$this->txtImageReference->Name = QApplication::Translate('Image Reference');
-			$this->txtImageReference->Text = $this->objMemberContact->ImageReference;
+			$this->txtImageReference->Text = $this->objMemberContact?->ImageReference;
 			$this->txtImageReference->Required = true;
 			$this->txtImageReference->MaxLength = MemberContact::ImageReferenceMaxLength;
 		}
@@ -326,35 +326,35 @@
 		
 		// Protected Update Methods
 		protected function UpdateMemberContactFields() {
-			$this->objMemberContact->LastName = $this->txtLastName->Text;
-			$this->objMemberContact->FirstName = $this->txtFirstName->Text;
-			$this->objMemberContact->Email = $this->txtEmail->Text;
-			$this->objMemberContact->Addr1 = $this->txtAddr1->Text;
-			$this->objMemberContact->Addr2 = $this->txtAddr2->Text;
-			$this->objMemberContact->City = $this->txtCity->Text;
-			$this->objMemberContact->State = $this->txtState->Text;
-			$this->objMemberContact->Zip = $this->txtZip->Text;
-			$this->objMemberContact->Gender = $this->txtGender->Text;
-			$this->objMemberContact->BirthDay = $this->txtBirthDay->Text;
-			$this->objMemberContact->BirthMonth = $this->txtBirthMonth->Text;
-			$this->objMemberContact->BirthYear = $this->txtBirthYear->Text;
-			$this->objMemberContact->MainPhone = $this->txtMainPhone->Text;
-			$this->objMemberContact->AltPhone = $this->txtAltPhone->Text;
-			$this->objMemberContact->Note = $this->txtNote->Text;
-			$this->objMemberContact->TransferId = $this->txtTransferId->Text;
-			$this->objMemberContact->ContactAdded = $this->calContactAdded->DateTime;
-			$this->objMemberContact->GoogleEmail = $this->txtGoogleEmail->Text;
-			$this->objMemberContact->FacebookEmail = $this->txtFacebookEmail->Text;
-			$this->objMemberContact->JoinedClub = $this->calJoinedClub->DateTime;
-			$this->objMemberContact->NotActive = $this->chkNotActive->Checked;
-			$this->objMemberContact->ImageReference = $this->txtImageReference->Text;
+			$this->objMemberContact?->LastName = $this->txtLastName->Text;
+			$this->objMemberContact?->FirstName = $this->txtFirstName->Text;
+			$this->objMemberContact?->Email = $this->txtEmail->Text;
+			$this->objMemberContact?->Addr1 = $this->txtAddr1->Text;
+			$this->objMemberContact?->Addr2 = $this->txtAddr2->Text;
+			$this->objMemberContact?->City = $this->txtCity->Text;
+			$this->objMemberContact?->State = $this->txtState->Text;
+			$this->objMemberContact?->Zip = $this->txtZip->Text;
+			$this->objMemberContact?->Gender = $this->txtGender->Text;
+			$this->objMemberContact?->BirthDay = $this->txtBirthDay->Text;
+			$this->objMemberContact?->BirthMonth = $this->txtBirthMonth->Text;
+			$this->objMemberContact?->BirthYear = $this->txtBirthYear->Text;
+			$this->objMemberContact?->MainPhone = $this->txtMainPhone->Text;
+			$this->objMemberContact?->AltPhone = $this->txtAltPhone->Text;
+			$this->objMemberContact?->Note = $this->txtNote->Text;
+			$this->objMemberContact?->TransferId = $this->txtTransferId->Text;
+			$this->objMemberContact?->ContactAdded = $this->calContactAdded->DateTime;
+			$this->objMemberContact?->GoogleEmail = $this->txtGoogleEmail->Text;
+			$this->objMemberContact?->FacebookEmail = $this->txtFacebookEmail->Text;
+			$this->objMemberContact?->JoinedClub = $this->calJoinedClub->DateTime;
+			$this->objMemberContact?->NotActive = $this->chkNotActive->Checked;
+			$this->objMemberContact?->ImageReference = $this->txtImageReference->Text;
 		}
 
 
 		// Control ServerActions
 		protected function btnSave_Click($strFormId, $strControlId, $strParameter) {
 			$this->UpdateMemberContactFields();
-			$this->objMemberContact->Save();
+			$this->objMemberContact?->Save();
 
 
 			$this->RedirectToListPage();
@@ -366,7 +366,7 @@
 
 		protected function btnDelete_Click($strFormId, $strControlId, $strParameter) {
 
-			$this->objMemberContact->Delete();
+			$this->objMemberContact?->Delete();
 
 			$this->RedirectToListPage();
 		}

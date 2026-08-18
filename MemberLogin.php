@@ -42,7 +42,8 @@ class acx2MemberLoginForm extends MemberContactEditFormBase {
 	protected function SetupMemberContact() {
 		// if the member is trying to login using a loginKey then let them in
 		$loginKey = QApplication::QueryString('loginKey');
-		$linkKeyArray = unserialize(openssl_decrypt(base64_decode($loginKey ?? ''), 'aes-256-cbc', __EMAIL_KEY__, OPENSSL_RAW_DATA,__EMAIL_IV__) ?? '');
+		$binaryIv = hex2bin(__EMAIL_IV__); 
+		$linkKeyArray = unserialize(openssl_decrypt(base64_decode($loginKey ?? ''), 'aes-256-cbc', __EMAIL_KEY__, OPENSSL_RAW_DATA,$binaryIv) ?? '');
 
 		if ($loginKey){
 			// check to see if member already exists
