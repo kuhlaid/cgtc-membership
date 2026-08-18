@@ -22,8 +22,11 @@
  * June 13, 2017 - wpg
  * - separating member and non-member sections for login (club signup)
  */
-require __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
+// Instantiate the immutable loader pointing to your root directory
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 print "Env var: ".$_ENV['TEST_ENV_VAR'];
 exit;
 
