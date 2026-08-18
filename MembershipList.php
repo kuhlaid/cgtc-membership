@@ -412,7 +412,7 @@
 
 			$this->colBirthMonth = new QDataGridColumn(QApplication::Translate('Birth Month'), '<?= $_ITEM->BirthMonth; ?>', array('OrderByClause' => QQ::OrderBy(QQN::MemberContact()->BirthMonth), 'ReverseOrderByClause' => QQ::OrderBy(QQN::MemberContact()->BirthMonth, false)));
 
-			$this->colBirthYear = new QDataGridColumn(Q__SUBDIRECTORY__::Translate('Birth Year'), '<?= $_ITEM->BirthYear; ?>', array('OrderByClause' => QQ::OrderBy(QQN::MemberContact()->BirthYear), 'ReverseOrderByClause' => QQ::OrderBy(QQN::MemberContact()->BirthYear, false)));
+			$this->colBirthYear = new QDataGridColumn(QApplication::Translate('Birth Year'), '<?= $_ITEM->BirthYear; ?>', array('OrderByClause' => QQ::OrderBy(QQN::MemberContact()->BirthYear), 'ReverseOrderByClause' => QQ::OrderBy(QQN::MemberContact()->BirthYear, false)));
 
 			$this->colMainPhone = new QDataGridColumn(QApplication::Translate('Main Phone'), '<?= QString::Truncate($_ITEM->MainPhone, 200); ?>', array('OrderByClause' => QQ::OrderBy(QQN::MemberContact()->MainPhone), 'ReverseOrderByClause' => QQ::OrderBy(QQN::MemberContact()->MainPhone, false)));
 
