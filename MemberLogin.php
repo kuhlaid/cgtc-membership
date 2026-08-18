@@ -42,8 +42,8 @@ class acx2MemberLoginForm extends MemberContactEditFormBase {
 	protected function SetupMemberContact() {
 		// if the member is trying to login using a loginKey then let them in
 		$loginKey = QApplication::QueryString('loginKey');
-		$binaryIv = hex2bin(__EMAIL_IV__); 
-		$linkKeyArray = unserialize(openssl_decrypt(base64_decode($loginKey ?? ''), 'aes-256-cbc', __EMAIL_KEY__, OPENSSL_RAW_DATA,$binaryIv) ?? '');
+		// $binaryIv = hex2bin(__EMAIL_IV__); 
+		$linkKeyArray = unserialize(openssl_decrypt(base64_decode($loginKey ?? ''), $_ENV['CIPHER_TYPE'], __EMAIL_KEY__, OPENSSL_RAW_DATA, __EMAIL_IV__) ?? '');
 
 		if ($loginKey){
 			// check to see if member already exists
@@ -115,7 +115,7 @@ class acx2MemberLoginForm extends MemberContactEditFormBase {
 		// send the email and last name
 		$dataArray = array(trim(strtolower($this->txtEmail->Text ?? '')),trim(ucfirst($this->txtLastName->Text ?? '')));
 		// we need to encode the data
-		$linkKey = urlencode(base64_encode(openssl_encrypt(serialize($dataArray), 'aes-256-cbc', __EMAIL_KEY__, OPENSSL_RAW_DATA,__EMAIL_IV__)));
+		$linkKey = urlencode(base64_encode(openssl_encrypt(serialize($dataArray), $_ENV['CIPHER_TYPE'], __EMAIL_KEY__, OPENSSL_RAW_DATA,__EMAIL_IV__)));
 
 		QApplication::Redirect('emailNotification.php?option=sendMemberLoginLink&loginKey='.$linkKey);
 	}

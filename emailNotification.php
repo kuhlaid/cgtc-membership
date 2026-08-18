@@ -317,8 +317,15 @@ class EmailReport extends QForm {
 			$strLink = "<a href='".$linkAddress."'>".$linkAddress."</a>";
 
 			// decode the login link
-			$binaryIv = hex2bin(__EMAIL_IV__); 
-			$linkKeyArray = unserialize(openssl_decrypt(base64_decode($loginKey ?? ''), 'aes-256-cbc', __EMAIL_KEY__, OPENSSL_RAW_DATA,$binaryIv) ?? '');
+			// $binaryIv = hex2bin(__EMAIL_IV__); 
+			$cipher = $_ENV['CIPHER_TYPE'];
+			// // 4. Calculate the required IV length dynamically for your cipher
+			// $iv_length = openssl_cipher_iv_length($cipher);
+
+			// // 5. Extract the IV from the beginning of the packet
+			// $iv = substr($raw_packet, 0, $iv_length);
+
+			$linkKeyArray = unserialize(openssl_decrypt(base64_decode($loginKey ?? ''), $cipher, __EMAIL_KEY__, OPENSSL_RAW_DATA, __EMAIL_IV__) ?? '');
 
 			$memberId='x';
 
