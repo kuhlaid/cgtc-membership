@@ -23,7 +23,6 @@
  * - separating member and non-member sections for login (club signup)
  */
 
-throw new Exception("This is my error message");
 print "Env var: ".getenv('TEST_ENV_VAR');
 exit;
 
