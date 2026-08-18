@@ -142,7 +142,7 @@ else {
 	showChangeLog();
 }
 } else {
-	QSessionDB::DeleteAll();	// make sure the clear the sessions
+	// QSessionDB::DeleteAll();	// make sure the clear the sessions
 	QApplication::Redirect('login.php');
 	exit;
 	?>
