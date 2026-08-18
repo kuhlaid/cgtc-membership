@@ -1,0 +1,17 @@
+
+
+/* QCODO Core styles - */
+/* datagrid results header cells (left and right) */
+.resultsPagieC1 { width:50%;text-align:left;font-size:12px; padding:4px; padding-right:60px;}
+.resultsPagieC2 { width:50%;text-align:right;font-size:11px; padding:4px;}
+td.resultsPane, tr.headerRow, td.resultsPane table.results { background-color: rgb(248, 248, 248); }
+tr.headerRow th {font-size:11px;text-align:center;border-bottom-color:#000 !important;}
+tr.headerRow th a {text-decoration: underline;}
+
+/* datagrid sorted header */
+.dgSortColumnHdr { text-transform: uppercase;color:blue;display:block;}
+/* pagination links */
+.paginator_inactive_step { font-weight: bold; color: #aaaaaa; }
+.paginator_active_step { font-weight: bold; color: #000000; text-decoration: none; }
+.paginator_selected_page, .paginator_page, .paginator_active_step { text-decoration: none; color: #000000; padding: 2px 5px 2px 5px; border: 1px solid #fff; font-weight: bold;}
+.paginator_selected_page, a.paginator_page:hover, a.paginator_active_step:hover { background-color: #ddccff; padding: 2px 5px 2px 5px; border: 1px solid #000; }

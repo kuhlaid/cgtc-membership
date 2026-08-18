@@ -1,0 +1,1 @@
+CGTC takes your privacy seriously and as such we do not store any user login passwords.  By using the Google or Facebook Logins we are NOT collecting, nor do we have access to your Google or Facebook login password.  We simply use your email address to confirm you have a Google or Facebook account registered to you.

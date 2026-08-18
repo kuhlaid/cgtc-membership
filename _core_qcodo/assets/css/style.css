@@ -1,0 +1,136 @@
+	/* Sticky footer styles
+-------------------------------------------------- */
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.nm-active{border-top:5px solid #007bff;padding:2px;width:100%;display:block;}/* represent selected sections of the page */
+#wrap > .container {
+  padding: 60px 15px 0;
+}
+.container .credit {
+  margin: 20px 0;
+}
+
+#footer > .container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.fs24 {font-size: 24px;}
+
+code {
+  font-size: 80%;
+}
+
+/* link option on list pages for adding a new item to the list */
+#createOpt, .createOpt {float:right;font-size:14px;padding-left:20px;}
+
+/* background color of appointment types */
+.bgS1 {	background-color: #d96666;} 
+.bgS2, .bgS22 {	background-color: #e67399;}
+.bgS3 {	background-color: #b373b3;}
+.bgS4 { background-color: #8c66d9; }
+.bgS7 {	background-color: #59bfb3;}
+.bgS10 { background-color: #8cbf40;}
+.bgS17 { background-color: #8997a5;}
+.bgS20, .bgS23,.bgS25, .bgS26 { background-color: #a7a77d;}
+
+
+.bgS1,.bgS2,.bgS3,.bgS4,.bgS7,.bgS10,.bgS17,.bgS20,.bgS22,.bgS23,.bgS25,.bgS26 {color:#fff;}
+
+/* biological sample color*/
+.s1 {
+	background-color: red;
+	color: #fff;
+	padding: 3px;
+}
+/* urine */
+.s2 {
+	background-color: yellow;
+	color: #000;
+	padding: 3px;
+}
+/* plasma, wppr */
+.sPurple,.s8,.s3 {
+	background-color: purple;
+	color: #fff;
+	padding: 3px;
+}
+/* red cell */
+.s9 {
+	background-color: #C90000;
+	color: #fff;
+	padding: 3px;
+}
+/* buffy coat */
+.s10 {
+	background-color: #efefef;
+	color: #000;
+	padding: 3px;
+}
+
+/* used to 'hide' containers */
+.overlay {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 2;
+  background: rgba(39, 42, 43, 0.8);
+  transition: opacity 200ms ease-in-out;
+  border-radius: 4px;
+  margin: -15px 0 0 -15px;
+  opacity: 1;
+}
+
+span.warning {
+  display: block;
+  color:red;
+  font-size:0.75em;
+}
+
+
+/* QCODO Core styles - */
+/* datagrid results header cells (left and right) */
+.resultsPagieC1 { width:50%;text-align:left;font-size:12px; padding:4px; padding-right:60px;}
+.resultsPagieC2 { width:50%;text-align:right;font-size:11px; padding:4px;}
+tr td.resultsPane, tr.headerRow, td.resultsPane table.results { background-color: rgb(248, 248, 248); }
+tr.headerRow th {font-size:11px;text-align:center;border-bottom-color:#000 !important;}
+tr.headerRow th a {text-decoration: underline;}
+
+/* datagrid sorted header */
+.dgSortColumnHdr { text-transform: uppercase;color:blue;display:block;}
+/* pagination links */
+.paginator_inactive_step { font-weight: bold; color: #aaaaaa; }
+.paginator_active_step { font-weight: bold; color: #000000; text-decoration: none; }
+.paginator_selected_page, .paginator_page, .paginator_active_step { text-decoration: none; color: #000000; padding: 2px 5px 2px 5px; border: 1px solid #fff; font-weight: bold;}
+.paginator_selected_page, a.paginator_page:hover, a.paginator_active_step:hover { background-color: #ddccff; padding: 2px 5px 2px 5px; border: 1px solid #000; }
+
+.contentBorder {
+	height:3px;width:100%;background-color:#e6f0ff;padding:0px;
+}

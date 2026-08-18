@@ -22,18 +22,15 @@
  * June 13, 2017 - wpg
  * - separating member and non-member sections for login (club signup)
  */
-require_once __DIR__ . '/vendor/autoload.php';
-
-// Instantiate the immutable loader pointing to your root directory
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-print "Env var: ".$_ENV['TEST_ENV_VAR'];
-exit;
 
 // Include prepend.inc to load Qcodo
 require('includes/prepend.inc.php');
+
+print "Env var: ".$_ENV['TEST_ENV_VAR'];
+exit;
+
 define('__SEL_MENU__',__strCGTC_Home___);
-$joinUrl='https://www.carolinagodiva.org/index.php?page=application';
+$joinUrl=$_ENV['JOIN_URL'];
 require(__INCLUDES__ . '/header.inc.php');
 
 function clearRenewalSession(){
@@ -60,19 +57,7 @@ if (QApplication::QueryString('strOption')=='PaymentReceived') {
 	exit;
 }
 function showChangeLog(){
-	print "<div class='m-2'>
-	About this membership portal:<br/>
-This application was initially created in 2017 by Godiva volunteers in order to manage club membership in a central location.
-<br/><br/>
-<b>If you have any suggestions or corrections please contact membership volunteer Patrick Gale at <a href='mailto:w.patrick.gale@gmail.com'>w.patrick.gale@gmail.com</a></b>
-</div>";
-// 				<span class='bld fs18'>Change notices:</span>
-// Jan. 1, 2018 - wpg
-// Allowing members to edit their basic profile information (not family members as of yet) and making a few interface updates.
-// Adding general change notices to this page.
-
-// Dec. 2017 - wpg
-// Adding our club Facebook feed and Google calendar feed
+	print $_ENV['CHANGELOG_INFO'];
 }
 
 // if the user has logged in
@@ -112,7 +97,7 @@ MemberContact::checkExpiredMembership();
 					<div class="h3"><?=$strOtherFamilyMembers;?></div>
 					</div>
 					<div>
-					<a href='https://www.carolinagodiva.org/index.php?page=membership-payment' class='btn btn-primary' target='_blank' title='Renew or extend your membership'>Renew or extend your membership via PayPal</a>
+					<a href='<?=$_ENV['MEMBERSHIP_PAYMENT_URL'];?>' class='btn btn-primary' target='_blank' title='Renew or extend your membership'><?=$_ENV['RENEWAL_TEXT'];?></a>
 					</div>
 				</div>
 			</div>
@@ -126,14 +111,14 @@ MemberContact::checkExpiredMembership();
 		<div class=" card-header">Event Calendar</div>
 			<div class="card-body">
 			<div class="embed-responsive embed-responsive-1by1">
-	<iframe src="https://calendar.google.com/calendar/embed?title=Events%20for%20Carolina%20Godvia%20Track%20Club&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=slrj30gikrdq69q15terp7492c%40group.calendar.google.com&amp;color=%2329527A&amp;ctz=America%2FNew_York" scrolling="yes"></iframe>
+	<iframe src="<?=$_ENV['GOOGLE_CALENDAR_EMBED'];?>" scrolling="yes"></iframe>
 </div>
 			</div>
 		</div>
 	</div>
 	<div class="col-lg-6">
 	<div class="embed-responsive embed-responsive-1by1">
-					<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCarolinaGodivaTrackClub%2F&tabs=timeline&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=1734470903511605"  scrolling="yes"></iframe>
+					<iframe src="<?=$_ENV['FACEBOOK_EMBED_URL'];?>"  scrolling="yes"></iframe>
 					</div>
 	</div>
 </div>
@@ -147,7 +132,7 @@ MemberContact::checkExpiredMembership();
 </iframe>
 <script type="text/javascript">
   document.getElementById('forum_embed').src =
-     'https://groups.google.com/a/carolinagodiva.org/forum/embed/?place=forum/cgtc'
+     '<?=$_ENV['GOOGLE_GROUP_EMBED'];?>'
      + '&showsearch=true&showpopout=true&showtabs=false'
      + '&parenturl=' + encodeURIComponent(window.location.href);
 </script>
@@ -159,8 +144,6 @@ else {
 	print "<h2>You are logged in as a ".MemberAclAssn::$accessArray[MemberAclAssn::getCurrentAccessType()]." user</h2>";
 	showChangeLog();
 }
-	//<h1 class='warning'>Hello ".QSessionDB::get(__SESSION_PREFIX__.'__MEMBER_NAME__')."</h1>
-	//<h2 style='border:10px solid #6d84b4;padding:5px;border-radius: 25px;text-align: center;'>".MembershipAssoc::CurrentMembershipExpireString($objMembershipAssoc)."</h2>
 } else {
 	QSessionDB::DeleteAll();	// make sure the clear the sessions
 	QApplication::Redirect('login.php');
@@ -178,7 +161,7 @@ else {
 				<div class="text-center p-2">
 				If you have a Google/Gmail account then <br/><a href="googleLogin.php" class="bld">click here to login using a
 					Google account<br/>
-					<img src='https://<?=__APP_DOMAIN__.__IMAGE_ASSETS__;?>/goo_login.png' height="46px" alt='Google login Logo' title='Google login Logo'/></a>
+					<img src='<?=__APP_DOMAIN__.__IMAGE_ASSETS__;?>/goo_login.png' height="46px" alt='Google login Logo' title='Google login Logo'/></a>
 			
 				</div>
 				<div class="text-center p-2">
@@ -190,14 +173,14 @@ else {
 					Sorry, the Facebook login is broken.
 					<!-- If you have a Facebook account then <br/><a href="facebookLogin.php" class="bld">click here to login using a
 						Facebook account<br/>
-						<img src='https://<?=__APP_DOMAIN__.__IMAGE_ASSETS__;?>/fb_login.png' height="46px" alt='Facebook login Logo' title='Facebook login Logo'/></a> -->
+						<img src='<?=__APP_DOMAIN__.__IMAGE_ASSETS__;?>/fb_login.png' height="46px" alt='Facebook login Logo' title='Facebook login Logo'/></a> -->
 				</div>
 				*/
 				?>
 			
 				<div class="text-center p-2">
 					...or to simply have your login emailed to you<br/>
-					<a href="MemberLogin.php" class="bld">click here to fill out this form<br/><img src='https://<?=__APP_DOMAIN__.__IMAGE_ASSETS__;?>/email.jpg' height="46px" alt='Email login image' title='Email login image'/></a>
+					<a href="MemberLogin.php" class="bld">click here to fill out this form<br/><img src='<?=__APP_DOMAIN__.__IMAGE_ASSETS__;?>/email.jpg' height="46px" alt='Email login image' title='Email login image'/></a>
 				</div>
 			</div>
 		</div>
