@@ -91,7 +91,7 @@ if (MemberContact::LoggedIn()) {
 			</div>
 			<?php } ?>
 		</div>
-		<div class="h5 justify-content-end p-1"><img src='https://<?=__APP_DOMAIN__.__IMAGE_ASSETS__;?>/CgtcLogo300px.png' alt='CGTC Logo' title='CGTC Logo' style='height:3em;' class='img-thumbnail mr-2'/><?=__APPLICATION_NAME__;?></div>
+		<div class="h5 justify-content-end p-1"><img src='<?=__APP_DOMAIN__.__IMAGE_ASSETS__;?>/CgtcLogo300px.png' alt='CGTC Logo' title='CGTC Logo' style='height:3em;' class='img-thumbnail mr-2'/><?=__APPLICATION_NAME__;?></div>
 	</nav>
 	<div class="container-fluid">
 	<?php if (trim(QSessionDB::get('error') ?? '') != '') {?>
