@@ -94,9 +94,9 @@ if (MemberContact::LoggedIn()) {
 		<div class="h5 justify-content-end p-1"><img src='<?=__APP_DOMAIN__.__IMAGE_ASSETS__;?>/CgtcLogo300px.png' alt='CGTC Logo' title='CGTC Logo' style='height:3em;' class='img-thumbnail mr-2'/><?=__APPLICATION_NAME__;?></div>
 	</nav>
 	<div class="container-fluid">
-	<?php // if (trim(QSessionDB::get('error') ?? '') != '') {?>
+	<?php if (trim(QSessionDB::get('error') ?? '') != '') {?>
 		<h1 class="alert alert-warning"><?=QSessionDB::get('error');?></h1>
-	<?php //} ?>
+	<?php } ?>
 	<?php if (QSessionDB::get(__SESSION_PREFIX__.'__START_MEMBER_RENEWAL__')) {?>
 		<div style="font: 14px 'Helvetica','Sans-Serif';border:1px dashed #000;background-color:#fcfdff;padding:20px;margin-bottom:20px;">
 		<a href="index.php?strOption=cancelMemberRenewal" class="fltR" title="Cancel renewal"><img src="<?=__IMAGE_ASSETS__;?>/closebox.png" border="0"></a>
