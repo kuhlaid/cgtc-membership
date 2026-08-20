@@ -8,6 +8,7 @@
  */
 // Include prepend.inc to load Qcodo
 require('includes/prepend.inc.php');
+QSessionDB::set('error', 'testing error log');
 define('__SEL_MENU__',__strClub_Home___);
 $joinUrl=$_ENV['JOIN_URL'];
 require(__INCLUDES__ . '/header.inc.php');
