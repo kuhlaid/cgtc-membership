@@ -11,7 +11,7 @@
  *
  */
 	// This example footer.inc.php is intended to be modfied for your application.
-	// QSessionDB::set('error', ' ');
+	QSessionDB::set('error', ' ');
 
 	// print link to view database queries
 	// again, replace '1' with whatever database connection you are using
